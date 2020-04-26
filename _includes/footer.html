@@ -1,0 +1,28 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">
+      <a class="page-link" href="{{ site.url | relative_url }}">
+        {{ site.title | escape }}
+      </a>
+    </h2>
+
+    <div class="footer-col-wrapper">
+
+      <div class="footer-col footer-col-2">
+        <p class="feed-subscribe">
+          <i class="fas fa-rss"></i>
+          <a href="{{ 'feed.xml' | relative_url }}">Subscribe</a>
+        </p>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>{{- site.description -}}</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
