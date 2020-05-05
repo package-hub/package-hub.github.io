@@ -7,14 +7,13 @@ layout: default
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
 
-  {{ content }}
-
-  {%- if site.posts.size > 0 -%}
+  {%- if paginator.posts.size > 0 -%}
     <h2 class="post-list-heading">
       {{ page.list_title | default: "Posts" }}
     </h2>
+
     <ul class="post-list">
-      {%- for post in site.posts -%}
+      {%- for post in paginator.posts -%}
       <li>
 
         {% if post.categories contains "javascript" %}
@@ -36,4 +35,23 @@ layout: default
     <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
   {%- endif -%}
 
+</div>
+
+<hr />
+
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}" class="previous">&lt; Previous</a>
+  {% else %}
+    <span class="previous">&lt; Previous</span>
+  {% endif %}
+  •
+  <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  •
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}" class="next">Next &gt;</a>
+  {% else %}
+    <span class="next ">Next &gt;</span>
+  {% endif %}
 </div>
