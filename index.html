@@ -3,38 +3,17 @@ layout: default
 ---
 
 <div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+  <h1 class="post-list-heading">
+    {{ page.list_title | default: "Posts" }}
+  </h1>
 
-  {%- if paginator.posts.size > 0 -%}
-    <h2 class="post-list-heading">
-      {{ page.list_title | default: "Posts" }}
-    </h2>
+  <ul class="post-list">
+    {%- for post in paginator.posts -%}
+      {% include post_li.html %}
+    {%- endfor -%}
+  </ul>
 
-    <ul class="post-list">
-      {%- for post in paginator.posts -%}
-      <li>
-
-        {% if post.categories contains "javascript" %}
-          <i class="fab fa-js"></i>
-        {% elsif post.categories contains "python" %}
-          <i class="fab fa-python"></i>
-        {% else %}
-          <i class="fas fa-box-open"></i>
-        {% endif %}
-
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-
-        {{ post.content }}
-      </li>
-      {%- endfor -%}
-    </ul>
-
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-  {%- endif -%}
-
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
 </div>
 
 <hr />

@@ -1,0 +1,33 @@
+<li>
+
+  {% if post.categories contains "java" %}
+    <i class="fab fa-java"></i>
+  {% elsif post.categories contains "javascript" %}
+    <i class="fab fa-js"></i>
+  {% elsif post.categories contains "php" %}
+    <i class="fab fa-php"></i>
+  {% elsif post.categories contains "python" %}
+    <i class="fab fa-python"></i>
+  {% elsif post.categories contains "ruby" %}
+    <i class="fa fa-gem"></i>
+  {% elsif post.categories contains "typescript" %}
+    <i class="fab fa-js"></i>
+  {% else %}
+    <i class="fas fa-box-open"></i>
+  {% endif %}
+
+  {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+  <span class="post-meta">{{ post.date | date: date_format }}</span>
+
+  {{ post.content }}
+
+  <p class="post-categories" style="padding-top: 0.5em; padding-bottom: 0.5em;">
+    <i class="fas fa-tags"></i> Tags:
+    <a href="{{site.baseurl}}/category/{{post.categories[0]|slugize}}">#{{ post.categories[0] }}</a>
+    {% assign categories = post.categories | slice: 1, 2 %}
+    {% for category in categories %}
+    • {{ category }}
+    {% endfor %}
+  </p>
+
+</li>

@@ -1,6 +1,6 @@
 ---
 title: colfer
-categories: ['serialization', 'serializable-objects', 'cross-platform']
+categories: ['javascript', 'serialization', 'serializable-objects']
 ---
 ## [colfer](https://github.com/pascaldekloe/colfer)
 
