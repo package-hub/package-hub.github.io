@@ -1,0 +1,25 @@
+---
+title: edifact
+categories: ['php', 'edi', 'edifact']
+---
+## [edifact](https://github.com/php-edifact/edifact)
+
+### Tools to process EDI messages in UN/EDIFACT format
+
+```text
+UNA:+,? '
+UNB+UNOA:1+MAEU+LVRIXBCT+200813:0816+1412605'
+UNH+141260500001+COPARN:D:95B:UN'
+BGM+12+20200813081626+9'
+RFF+BN:204549739'
+NAD+CA+MAE:172:20'
+EQD+CN++45G1:102:5+2+2+4'
+RFF+BN:204549739'
+RFF+SQ:7G3JTL39O0M3B'
+TMD+++2'
+DTM+201:202008130000:203'
+LOC+98+LVRIX:139:6+RIGA TERMINAL:TER:ZZZ'
+CNT+16:1'
+UNT+12+141260500001'
+UNZ+1+1412605'
+```
